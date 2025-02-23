@@ -43,7 +43,7 @@ def main():
     df['outcome'] = df.apply(lambda row: 'win' if row['team_score'] > row['opponent_team_score'] else 'loss', axis=1)
 
     # Filter out wins against D1 teams
-    filtered_df = df[~((df['d1_bool'] == True) & (df['outcome'] == 'win'))]
+    filtered_df = df[~((df['d1_bool'] == True) & (df['outcome'] == 'loss'))]
 
     # Group data by team
     team_stats = filtered_df.groupby('team').agg(
